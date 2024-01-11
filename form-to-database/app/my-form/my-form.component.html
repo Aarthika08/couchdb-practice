@@ -1,0 +1,14 @@
+<p>my-form works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+  
+    <label for="number">Age:</label>
+    <input type="number" id="age" formControlName="age">
+  
+    <!-- Add more form fields as needed -->
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+
+    <!-- <button type="submit" [disabled]="!myForm.valid">Submit</button> -->
+  </form>
+  

@@ -1,0 +1,51 @@
+couch DB
+
+-it is no sql database like mongoDB
+_it is database document.
+-linux,uni,win,etc os
+/_all_dbs-to get all the database
+ available to us through Making http request or connect through curl
+
+commands
+curl  http://admin:admin@localhost:5984/_all_dbs
+
+to create database
+curl -XPUT http://admin:admin@localhost:5984/crud
+
+to read
+curl  http://admin:admin@localhost:5984/_all_dbs
+
+
+SET SERVER=http://admin:admin@127.0.0.1:5984
+
+C:\Users\This Pc>ECHO %SERVER%
+>http://admin:admin@127.0.0.1:5984
+
+C:\Users\This Pc>curl -X GET %SERVER%/_all_dbs
+>["demo","test"]
+
+to view
+
+curl -X GET %SERVER%/demo/_design/view1/_view/id
+{"total_rows":2,"offset":0,"rows":[
+{"id":"69b8477fcb6c0564522a6131a8000ea5","key":"69b8477fcb6c0564522a6131a8000ea5","value":1},
+{"id":"69b8477fcb6c0564522a6131a80018a7","key":"69b8477fcb6c0564522a6131a80018a7","value":1}
+
+to get uuid
+
+curl -X GET %SERVER%/_uuids
+{"uuids":["69b8477fcb6c0564522a6131a8005c8e"]}
+
+
+
+curl -X PUT %SERVER%/test/69b8477fcb6c0564522a6131a8006a69 -d "{\"name\":\"kathy williams\",\"email\":\"kwi
+ll@yahoo.com\"}"
+{"ok":true,"id":"69b8477fcb6c0564522a6131a8006a69","rev":"1-f6c07638e8ffde7f5680e60632dbcd16"}
+
+
+to view after adding the value
+
+curl -X GET %SERVER%/demo/_design/view1/_view/id
+
+
+

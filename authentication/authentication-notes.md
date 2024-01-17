@@ -1,4 +1,4 @@
-Let's briefly discuss each of the mentioned authentication types: basic, cookie, proxy, and JWT (JSON Web Token).
+ Let's briefly discuss each of the mentioned authentication types: basic, cookie, proxy, and JWT (JSON Web Token).
 
 1. **Basic Authentication:**
    - **Description:** Basic Authentication is a simple mechanism where the user's credentials (username and password) are sent with each HTTP request.

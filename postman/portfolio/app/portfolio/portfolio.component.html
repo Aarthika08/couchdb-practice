@@ -1,0 +1,27 @@
+<!-- portfolio.component.html -->
+<div>
+  <h2>Projects</h2>
+
+  <!-- Add new project -->
+  <div>
+    <label>Title:</label>
+    <input [(ngModel)]="newProject.title" placeholder="Enter title" />
+    
+    <label>Description:</label>
+    <textarea [(ngModel)]="newProject.description" placeholder="Enter description"></textarea>
+    
+    <button (click)="addProject()">Add Project</button>
+  </div>
+
+  <hr/>
+  <button (click)="loadProjects()">Display Project</button>
+
+  <!-- List existing projects -->
+  <ul>
+    <li *ngFor="let project of projects">
+      {{ project.doc?.title }} - {{ project.doc?.description }}
+      <button (click)="updateProject(project.id)">Update</button>
+      <button (click)="deleteProject(project.id, project.value.rev)">Delete</button>
+    </li>
+  </ul>
+</div>
